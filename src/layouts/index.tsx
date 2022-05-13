@@ -1,5 +1,6 @@
 import React from 'react';
 import { IRouteComponentProps, Link } from 'umi'
+import { Space } from 'antd';
 import ProLayout, { PageContainer } from '@ant-design/pro-layout';
 import defprops from './defprops';
 import './index.less';
@@ -13,7 +14,16 @@ const Layouts = (props: IRouteComponentProps) => {
         {title}
         </div>
         )}
-        menuItemRender={(itemProps) => itemProps.outHref ? itemProps.name : <Link to={itemProps.path}>{itemProps.name}</Link>}
+        menuItemRender={(itemProps) => itemProps.outHref ? 
+          <Space>
+            <span>{itemProps.icon}</span>
+            <span>{itemProps.name}</span>
+          </Space> : 
+          <Space>
+            <span>{itemProps.icon}</span>
+            <Link className='dark-nav-link' to={itemProps.path}>{itemProps.name}</Link>
+          </Space>
+        }
       >
         <PageContainer content={<div>
           <h3>Formily</h3>

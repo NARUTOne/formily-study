@@ -1,5 +1,5 @@
 import React from 'react';
-import { SmileOutlined, TabletOutlined, AntDesignOutlined } from '@ant-design/icons';
+import { SmileOutlined, TabletOutlined, AntDesignOutlined, AppstoreFilled } from '@ant-design/icons';
 
 export default {
   route: {
@@ -9,6 +9,11 @@ export default {
         path: '/demo',
         name: 'demo',
         icon: <SmileOutlined />,
+      },
+      {
+        path: '/reactive',
+        name: 'reactive',
+        icon: <AppstoreFilled />,
       },
       {
         path: '/design',
