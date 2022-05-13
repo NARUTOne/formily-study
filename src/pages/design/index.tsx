@@ -1,11 +1,12 @@
 import React from 'react';
+import { IRouteComponentProps } from 'umi'
 
-const index = () => {
+const Design = (props: IRouteComponentProps) => {
   return (
     <div>
-      
+      {props.children}
     </div>
   );
 };
 
-export default index;
+export default Design;

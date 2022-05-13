@@ -24,7 +24,7 @@ const form = createForm({
   readPretty: true,
 })
 
-const IDUpload = (props) => {
+const IDUpload = (props: any) => {
   const field = useField()
   return (
     <Upload
@@ -39,7 +39,7 @@ const IDUpload = (props) => {
   )
 }
 
-const fetchAddress = (field) => {
+const fetchAddress = (field: any) => {
   const transform = (data = {}) => {
     return Object.entries(data).reduce((buf, [key, value]) => {
       if (typeof value === 'string')
