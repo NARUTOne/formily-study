@@ -1,11 +1,28 @@
 import React, { useState, useCallback } from 'react';
 import { Space, Button, Select, Timeline } from 'antd';
-import autorunCodes from './codes/autorun';
+import autorunCodes from './components/codes/autorun';
+import reactionCodes from './components/codes/reaction';
+import batchActionCodes from './components/codes/batch-action';
+import defineCodes from './components/codes/define';
+import modelCodes from './components/codes/model';
+import observeCodes from './components/codes/observe';
+import markrawCodes from './components/codes/markraw';
+import markobservableCodes from './components/codes/markobservable';
+import trackerCodes from './components/codes/tracker';
+import ReactReactive from './components/ReactReactive';
 
 const { Option } = Select;
 
 const codes: any = {
-  ...autorunCodes
+  ...autorunCodes,
+  ...reactionCodes,
+  ...batchActionCodes,
+  ...defineCodes,
+  ...modelCodes,
+  ...observeCodes,
+  ...markrawCodes,
+  ...markobservableCodes,
+  ...trackerCodes
 }
 
 const ReactiveDemo = () => {
@@ -38,12 +55,14 @@ const ReactiveDemo = () => {
         <Button type='primary' onClick={handleRun}>运行</Button>
       </Space>
       <div className='result-box'>
-        <h3>{code} 运行结果</h3>
+        <h4>{code} 运行结果</h4>
         <Timeline>
           {res.map((r, i) => <Timeline.Item key={i}>{r}</Timeline.Item>)}
           {efts.map((r, i) => <Timeline.Item color='red' key={i}>{r}</Timeline.Item>)}
         </Timeline>
       </div>
+      <h3>@formily/reactive-react 示例</h3>
+      <ReactReactive />
     </div>
   );
 };
