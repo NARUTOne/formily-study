@@ -21,6 +21,11 @@ export default {
         icon: <AppstoreFilled />,
       },
       {
+        path: '/react',
+        name: 'react',
+        icon: <AppstoreFilled />,
+      },
+      {
         path: '/design',
         name: 'design',
         icon: <TabletOutlined />,
