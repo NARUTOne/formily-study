@@ -16,6 +16,11 @@ export default {
         icon: <AppstoreFilled />,
       },
       {
+        path: '/core',
+        name: 'core',
+        icon: <AppstoreFilled />,
+      },
+      {
         path: '/design',
         name: 'design',
         icon: <TabletOutlined />,
