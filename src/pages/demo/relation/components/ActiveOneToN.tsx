@@ -1,18 +1,18 @@
-import React from 'react'
-import { createForm, onFieldValueChange } from '@formily/core'
-import { createSchemaField, FormConsumer } from '@formily/react'
-import { Form, FormItem, Input, Select } from '@formily/antd'
+import React from 'react';
+import { createForm, onFieldValueChange } from '@formily/core';
+import { createSchemaField, FormConsumer } from '@formily/react';
+import { Form, FormItem, Input, Select } from '@formily/antd';
 
 const form = createForm({
   effects() {
     onFieldValueChange('select', (field) => {
       form.setFieldState('*(input1,input2)', (state) => {
         //对于初始联动，如果字段找不到，setFieldState会将更新推入更新队列，直到字段出现再执行操作
-        state.display = field.value
-      })
-    })
+        state.display = field.value;
+      });
+    });
   },
-})
+});
 
 const SchemaField = createSchemaField({
   components: {
@@ -20,7 +20,7 @@ const SchemaField = createSchemaField({
     Input,
     Select,
   },
-})
+});
 
 export default () => (
   <Form form={form}>
@@ -58,4 +58,4 @@ export default () => (
       )}
     </FormConsumer>
   </Form>
-)
+);
