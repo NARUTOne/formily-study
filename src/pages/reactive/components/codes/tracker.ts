@@ -8,30 +8,32 @@ class Tracker {
 }
  */
 
-import { observable, Tracker } from '@formily/reactive'
+import { observable, Tracker } from '@formily/reactive';
 
-function trackerCode (callback?:(res: string[]) => void) {
-  const res: string[] = []
+function trackerCode(callback?: (res: string[]) => void) {
+  const res: string[] = [];
   const obs = observable({
     aa: 11,
-  })
-  
+  });
+
   const view = () => {
-    res.push(`obs.aa: ${obs.aa}`)
-  }
-  
+    res.push(`obs.aa: ${obs.aa}`);
+  };
+
   const tracker = new Tracker(() => {
-    res.push('tracker scheduler')
-    tracker.track(view) // 依赖变化执行
-  })
-  tracker.track(view) // 初始执行
-  
-  obs.aa = 22
-  
-  tracker.dispose()
-  callback && callback(res)
+    res.push('tracker scheduler');
+    tracker.track(view); // 依赖变化执行
+  });
+  tracker.track(view); // 初始执行
+
+  obs.aa = 22;
+  obs.aa = 33;
+
+  tracker.dispose();
+  obs.aa = 44;
+  callback && callback(res);
 }
 
 export default {
-  trackerCode
-}
+  trackerCode,
+};
