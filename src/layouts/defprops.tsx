@@ -1,5 +1,10 @@
 import React from 'react';
-import { SmileOutlined, TabletOutlined, AntDesignOutlined, AppstoreFilled } from '@ant-design/icons';
+import {
+  SmileOutlined,
+  TabletOutlined,
+  AntDesignOutlined,
+  AppstoreFilled,
+} from '@ant-design/icons';
 
 export default {
   route: {
@@ -26,6 +31,11 @@ export default {
         icon: <AppstoreFilled />,
       },
       {
+        path: '/antd',
+        name: 'antd',
+        icon: <AppstoreFilled />,
+      },
+      {
         path: '/design',
         name: 'design',
         icon: <TabletOutlined />,
@@ -36,7 +46,7 @@ export default {
         name: 'Formily 官网外链',
         icon: <AntDesignOutlined />,
       },
-    ]
+    ],
   },
   location: {
     pathname: '/',
