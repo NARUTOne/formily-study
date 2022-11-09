@@ -106,10 +106,24 @@ function matchPathCode(callback?: (res: string[]) => void) {
   callback && callback(res.map((r) => r.toString()));
 }
 
+function testPathCode(callback?: (res: string[]) => void) {
+  // const target: any = { array: [{ aa: 123, bb: 321 }] };
+  const res: string[] = [];
+
+  res.push(
+    JSON.stringify(
+      FormPath.parse('array.*[:].*[:].*[:].bb').match('array.0.0.0.aa'),
+    ),
+  );
+
+  callback && callback(res);
+}
+
 export default {
   dotPathCode,
   indexPathCode,
   deconstructionPathCode,
   relationPathCode,
   matchPathCode,
+  testPathCode,
 };
